@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-content {
+  width: 500px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 430px) {
+  .App-content {
+    width: 100%;
+  }
+}

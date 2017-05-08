@@ -1,0 +1,11 @@
+.reply-comment {
+  padding: 0 0 16px 32px !important;
+}
+
+.deep-reply-comment {
+  padding: 0 0 16px 0 !important;
+}
+
+.comment-content {
+  word-break: break-all;
+}

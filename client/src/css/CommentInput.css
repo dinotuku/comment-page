@@ -1,0 +1,43 @@
+.Comment-input {
+  position: fixed; 
+  bottom: 0;
+  height: 80px;
+  width: 500px;
+  z-index: 1;
+}
+
+.Comment-input-bar {
+  width: 80% !important;
+  bottom: 3px !important;
+}
+
+.Comment-input-button-wrapper {
+  float: right;
+}
+
+.Comment-input-button {
+  height: 36px !important;
+  width: 36px !important;
+  padding: 0 !important;
+  margin: 6px 0 0 6px !important;
+}
+
+.Comment-input-button-svg {
+  width: 80% !important;
+}
+
+@media (max-width: 430px) {
+  .Comment-input {
+    width: 100%;
+  }
+
+  .Comment-input-bar {
+    width: 75% !important;
+  }
+
+  .Comment-input-button {
+    height: 32px !important;
+    width: 32px !important;
+    margin: 3px 0 0 3px !important;
+  }
+}
