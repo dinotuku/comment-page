@@ -11,6 +11,10 @@ class CommentItem extends Component {
     this.props.onReplyTap(this.props.item);
   }
 
+  handleRemove = () => {
+    this.props.onRemoveTap(this.props.item);
+  }
+
   renderReply = (replys, allReplys) => {
     if (replys.length > 0) {
       return (
@@ -34,9 +38,23 @@ class CommentItem extends Component {
         item={ item }
         replys={ replys }
         allReplys={ allReplys }
+        editCount={ this.props.editCount }
         onReplyTap={ (item) => this.props.onReplyTap(item) }
+        onRemoveTap={ (item) => this.props.onRemoveTap(item) }
       />
     );
+  }
+
+  renderRemoveButton = (count) => {
+    if (count % 5 === 0 && count !== 0) {
+      return (
+        <FlatButton 
+          label="Remove"
+          onTouchTap={ this.handleRemove }
+        />
+      );
+    }
+    return;
   }
 
   render() {
@@ -64,6 +82,7 @@ class CommentItem extends Component {
               label="Reply"
               onTouchTap={ this.handleReply }
             />
+            { this.renderRemoveButton(this.props.editCount) }
           </CardActions>
           { this.renderReply(this.props.replys, this.props.allReplys) }
         </Card>

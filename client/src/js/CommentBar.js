@@ -16,6 +16,10 @@ class CommentBar extends Component {
     }
   }
 
+  handleIconTouch = () => {
+    this.props.onIconTouch();
+  }
+
   handleChange = (ev) => {
     this.props.onUserChange(ev.target.value);
   }
@@ -86,7 +90,7 @@ class CommentBar extends Component {
         <AppBar
           title={ this.props.logged ? `Hi ${ this.props.inputUser }` : "Comment" }
           iconElementLeft={
-            <IconButton><Message /></IconButton>
+            <IconButton onTouchTap={ this.handleIconTouch }><Message /></IconButton>
           }
           iconElementRight={
             this.props.logged ?
