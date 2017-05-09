@@ -12,7 +12,42 @@ class CommentApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      items: [{
+    idx: 0,
+    user: 'dtk0528',
+    content: 'LOGIN and type a name to start',
+    time: new Date('Mon, 8 May 2017 12:00:00 +0800'),
+    replys: [2, 3],
+    parent: false,
+    level: 1,
+  },
+  {
+    idx: 1,
+    user: 'dtk0528',
+    content: '∧/∨ => collapse/expand a comment',
+    time: new Date('Mon, 8 May 2017 12:05:00 +0800'),
+    replys: [],
+    parent: false,
+    level: 1,
+  },
+  {
+    idx: 2,
+    user: 'dtk0528',
+    content: 'REPLY to any comment',
+    time: new Date('Mon, 8 May 2017 12:05:10 +0800'),
+    replys: [],
+    parent: true,
+    level: 2,
+  },
+  {
+    idx: 3,
+    user: 'dtk0528',
+    content: '╳ => exit reply mode',
+    time: new Date('Mon, 8 May 2017 12:10:00 +0800'),
+    replys: [],
+    parent: true,
+    level: 2,
+  },],
       logged: false,
       inputUser: '',
       inputComment: '',
@@ -107,9 +142,10 @@ class CommentApp extends Component {
           });
 
           scroller.scrollTo(`${ this.state.items.length - 1 }-comment-item`, {
-            duration: 600,
+            duration: 400,
             delay: 100,
             smooth: "easeInOutQuad",
+            isDynamic: true
           })
         })
         .catch(err => console.error(err));
@@ -168,10 +204,13 @@ class CommentApp extends Component {
             onUserLogout={ this.handleUserLogout }
           />
           <FlipMove
-            duration={600}
-            staggerDelayBy={100}
-            easing="cubic-bezier(0.455, 0.030, 0.515, 0.955))"
-            appearAnimation="elevator">
+            duration={400}
+            staggerDelayBy={350}
+            easing="cubic-bezier(0.455, 0.030, 0.515, 0.955)"
+            appearAnimation="accordionVertical"
+            enterAnimation="accordionVertical"
+            leaveAnimation="accordionVertical"
+          >
             { comments.map((item, idx) => this.renderCommentItem(item, idx, allReplys)) }
           </FlipMove>
           {
