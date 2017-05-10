@@ -7,6 +7,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-flip-move": "^2.9.7",
+    "react-markdown": "^2.5.0",
     "react-scroll": "^1.5.2",
     "react-tap-event-plugin": "^2.0.1"
   },

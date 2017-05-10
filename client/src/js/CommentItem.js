@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import ReactMarkdown from 'react-markdown';
 import '../css/CommentItem.css';
 
 const Element = Scroll.Element;
@@ -75,7 +76,7 @@ class CommentItem extends Component {
             className="comment-content"
             expandable
           >
-            { this.props.item.content }
+            <ReactMarkdown source={ this.props.item.content } />
           </CardText>
           <CardActions expandable>
             <FlatButton 

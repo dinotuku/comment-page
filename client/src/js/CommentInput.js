@@ -14,6 +14,7 @@ class CommentInput extends Component {
 
   handleKeySubmit = (ev) => {
     if ((ev.which === 13 || ev.keyCode === 13)) {
+      if (ev.shiftKey) return;
       ev.preventDefault();
       this.props.onInputSubmit();
     }
@@ -42,6 +43,8 @@ class CommentInput extends Component {
               onChange={ this.handleChange }
               onKeyPress={ this.handleKeySubmit }
               errorText={ this.props.inputError }
+              multiLine
+              rowsMax={ 1 }
             />
             <span className="Comment-input-button-wrapper">
               { this.props.replyToIdx ? 
