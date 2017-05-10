@@ -1,20 +1,17 @@
 {
   "name": "comment-page",
   "version": "0.1.0",
-  "main": "server.js",
   "repository": "https://github.com/dtk0528/comment-page.git",
   "author": "Kuan Tung <b03901039@ntu.edu.tw>",
   "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+  "devDependencies": {
+    "now": "^5.2.3"
   },
   "scripts": {
-    "start": "node server.js",
-    "lint": "eslint ."
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0"
+    "build": "npm run build:server",
+    "build:client": "cd client && npm install && npm run build",
+    "build:server": "cd server && npm install",
+    "start": "cd server && npm start",
+    "deploy": "npm run build:client && now"
   }
 }

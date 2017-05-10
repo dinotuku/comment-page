@@ -23,7 +23,7 @@ A working live demo [https://comment-page.now.sh](https://comment-page.now.sh)
 	git clone https://github.com/dtk0528/comment-page.git
 	cd comment-page
 	
-#### Download and install all the dependencies (in comment-page/ and comment-page/client)
+#### Download and install all the dependencies (in server/ and client/)
 
 	yarn install
   
@@ -31,17 +31,17 @@ A working live demo [https://comment-page.now.sh](https://comment-page.now.sh)
 	
 ## Usage
 
-#### Build the app for production (in comment-page/client/)
+#### Build the app for production (in client/)
 
 	yarn run build
 
-#### Start the server (in comment-page/)
+#### Start the server (in server/)
 
 	yarn start
 
 #### Open a browser and go to
 
-	localhost:3001 
+	localhost:3001
 
 ---
 

@@ -11,13 +11,15 @@
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "eslint-config-react-app": "^0.6.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && yarn run delete-maps",
+    "delete-maps": "yarn run delete-map-files",
+    "delete-map-files": "find ./build -name '*.map' -delete",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
