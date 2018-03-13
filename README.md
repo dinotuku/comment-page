@@ -20,7 +20,7 @@ A working live demo [https://comment-page.now.sh](https://comment-page.now.sh)
 
 #### Get the source code  
 
-	git clone https://github.com/dtk0528/comment-page.git
+	git clone https://github.com/dinotuku/comment-page.git
 	cd comment-page
 	
 #### Download and install all the dependencies (in server/ and client/)
